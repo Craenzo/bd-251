@@ -1,0 +1,64 @@
+@startchen
+left to right direction
+'======================
+' Relacionamento 1 : 1
+'======================
+
+entity Pessoa {
+    
+    Nome
+    Idade 
+    CPF <<key>>
+}
+
+relationship contem{
+}
+
+entity Passaporte {
+    Numero do Passaporte
+    Cor 
+}
+
+Pessoa -1- contem
+contem -1- Passaporte
+
+'======================
+' Relacionamento 1 : N
+'======================
+
+entity Professor {
+    Suap<<key>> 
+    Salario 
+    
+}
+relationship ministra{
+    Material
+}
+entity Diciplina {
+    caga_horaria
+    departamento
+    codigo<<key>>
+}
+
+Professor -1- ministra
+Diciplina -n- ministra
+
+'======================
+' Relacionamento N : N
+'======================
+
+entity Aluno {
+    Matriucula<<key>>
+    Curso 
+     Nota
+}
+relationship aula{
+}
+entity Salas {
+    Cadeira
+    Mesa 
+    Numero<<key>>
+}
+Aluno -n- aula
+Salas -n- aula
+@endchen
