@@ -1,0 +1,44 @@
+@startuml
+
+'======================
+' Relacionamento 1 : 1
+'======================
+
+entity "Pessoa" {
+    
+}
+
+entity "Passaporte" {
+ 
+}
+
+Pessoa ||--|| Passaporte : Possui
+
+'======================
+' Relacionamento 1 : N
+'======================
+
+entity "Professor" {
+  
+}
+
+entity "Disciplina" {
+}
+
+Professor ||--|{ Disciplina: Ministra
+
+'======================
+' Relacionamento N : N
+'======================
+
+entity "Aluno" as Aluno {
+  
+}
+
+entity "Salas" {
+ 
+}
+
+Aluno }|--|{ Salas: Estudam
+
+@enduml
